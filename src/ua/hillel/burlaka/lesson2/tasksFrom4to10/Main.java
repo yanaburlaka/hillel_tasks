@@ -26,19 +26,19 @@ public class Main {
 
         public static int sumOfArrayElements(int[] array) {
             System.out.println("Sum of array elements:");
-            int SumOfElements = 0;
+            int sumOfElements = 0;
             for (int i = 0; i < array.length; i++) {
-                SumOfElements+=array[i];
+                sumOfElements+=array[i];
             }
-            return SumOfElements;
+            return sumOfElements;
         }
 
         //task number 7
 
         public static double meanOfArrayElements(int[] array, int sum) {
             System.out.println("Mean of array elements:");
-            double MeanOfElements = sum / array.length;
-            return MeanOfElements;
+            double meanOfElements = sum / array.length;
+            return meanOfElements;
         }
 
         //task number 8
@@ -95,8 +95,8 @@ public class Main {
 
         public static void main(String[] args) {
             String newLine = System.getProperty("line.separator");
-            int Sum, Min, Max, Compose = 0;
-            double Mean = 0;
+            int sum, min, max, compose = 0;
+            double mean = 0;
             int n = scanInput();
             int[] array = new int[n];
             System.out.println(newLine + "You have the following array:");
@@ -109,19 +109,19 @@ public class Main {
             System.out.println(newLine + "Results of 5th task:");
             divideByWithoutRemainder(array, 2); //task number 5
             System.out.println(newLine + "Results of 6th task:");
-            Sum = sumOfArrayElements(array); // task number 6
-            System.out.println(Sum);
+            sum = sumOfArrayElements(array); // task number 6
+            System.out.println(sum);
             System.out.println(newLine + "Results of 7th task:");
-            Mean = meanOfArrayElements(array, Sum);
-            System.out.println(Mean);
+            mean = meanOfArrayElements(array, sum);
+            System.out.println(mean);
             System.out.println(newLine + "Results of 8th task:");
-            Min = minElement(array);
-            System.out.println(Min);
-            Max = maxElement(array);
-            System.out.println(Max);
+            min = minElement(array);
+            System.out.println(min);
+            max = maxElement(array);
+            System.out.println(max);
             System.out.println(newLine + "Results of 9th task:");
-            Compose = compositionOfNonEvenElements(array);
-            System.out.println(Compose);
+            compose = compositionOfNonEvenElements(array);
+            System.out.println(compose);
             System.out.println(newLine + "Results of 10th task:");
             checkPositionOfElement(array, scanInput());
         }
