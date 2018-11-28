@@ -1,5 +1,4 @@
 package ua.hillel.burlaka.lesson3.task3;
-import ua.hillel.burlaka.lesson3.task3.Check;
 
 import java.util.Scanner;
 
@@ -15,7 +14,7 @@ public class Main {
 
     public static void main(String[] args) {
         String userInput = scanInput();
-        boolean checkResult = Check.checkExpression(userInput);
+        boolean checkResult = Util.checkExpression(userInput);
         if (checkResult) {
             System.out.println("It's a palindrome");
         } else {
