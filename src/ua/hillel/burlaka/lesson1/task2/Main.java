@@ -2,10 +2,7 @@ package ua.hillel.burlaka.lesson1.task2;
 
 public class Main {
 
-    public static void main(String[] args) {
-        int rows = 10;
-        int columns = 10;
-        int[][] array = new int[rows][columns];
+    public static void setValuesAndSeeArray (int[][] array, int rows, int columns) {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 array[i][j] = (int) (Math.random() * 101);
@@ -17,5 +14,12 @@ public class Main {
             }
             System.out.println();
         }
+    }
+
+    public static void main(String[] args) {
+        int rows = 10;
+        int columns = 10;
+        int[][] array = new int[rows][columns];
+        setValuesAndSeeArray(array, rows, columns);
     }
 }
