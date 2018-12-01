@@ -1,19 +1,18 @@
 package ua.hillel.burlaka.lesson2.task1;
 
+import java.util.Arrays;
+import java.util.Random;
+
 public class Main {
 
-    public static void setAndSeeArray (int[] array, int limit) {
-        for (int i = 0; i < array.length; i++) {
-            array[i] = (int) (Math.random() * 101);
-        }
-        for (int i = 0; i < limit; i++) {
-            System.out.print(array[i] + " ");
-        }
+    public static int[] setAndSeeArray(int arraySize) {
+        int[] array = new Random().ints(arraySize, 0, 100).toArray();
+        return array;
     }
 
     public static void main(String[] args) {
         int size = 10;
-        int[] array = new int[size];
-        setAndSeeArray(array, 5);
+        int limit = 5;
+        Arrays.stream(setAndSeeArray(size)).limit(limit).forEach(x-> System.out.println(x));
     }
 }

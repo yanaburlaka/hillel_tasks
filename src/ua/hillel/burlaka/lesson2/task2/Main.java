@@ -1,5 +1,7 @@
 package ua.hillel.burlaka.lesson2.task2;
+import java.util.Arrays;
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 public class Main {
 
@@ -14,9 +16,7 @@ public class Main {
     public static void main(String[] args) {
         int n = scanInput();
         int[] array = new int[n];
-        for (int i = 0; i < n; i++) {
-            array[i] = i + 1;
-            System.out.print(array[i] + " ");
-        }
+        IntStream.range(0, n).forEach(i -> array[i] = i + 1);
+        Arrays.stream(array, 0, array.length).forEach(x -> System.out.println(x));
     }
 }
