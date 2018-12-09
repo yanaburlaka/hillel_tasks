@@ -1,5 +1,7 @@
 package ua.hillel.burlaka.lesson2.task3;
+import java.util.Arrays;
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 public class Main {
 
@@ -14,9 +16,16 @@ public class Main {
     public static void main(String[] args) {
         int n = scanInput();
         int[] array = new int[n];
-        for (int i = n - 1; i >= 0; i--) {
-            array[i] = i + 1;
-            System.out.print(array[i] + " ");
+        if (n == 0) {
+            System.out.println("Size is zero");
+        }
+        else if (n == 1){
+            array[0] = n;
+        }
+        else {
+            IntStream stream = IntStream.rangeClosed(1, n).map(i -> n + 1 - i);
+            array = stream.toArray();
+            Arrays.stream(array).forEach(System.out::println);
         }
     }
 }
