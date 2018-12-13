@@ -15,9 +15,9 @@ public class Main {
 
     // task number 4 (divide by 3) and 5 (even numbers)
 
-    public static IntStream divideByWithoutRemainder(int[] array, int divider) {
-        IntStream stream = IntStream.of(array).filter(x -> (x % divider) == 0);
-        return stream;
+    public static int[] divideByWithoutRemainder(int[] array, int divider) {
+        IntStream stream = IntStream.range(0,array.length).filter(x->array[x]%divider==0).map(x -> array[x]);
+        return stream.toArray();
     }
 
     // task number 6
@@ -73,14 +73,14 @@ public class Main {
         Arrays.stream(array).forEach(System.out::println);
 
         System.out.println(newLine + newLine + "Results of 4th task:");
-        IntStream stream4 = divideByWithoutRemainder(array, divider1); //task number 4
+        int[] arrayRemainder1 = divideByWithoutRemainder(array, divider1); //task number 4
         System.out.println("Elements which are divided by " + divider1 + " without remainder:");
-        stream4.forEach(System.out::println);
+        Arrays.stream(arrayRemainder1).forEach(System.out::println);
 
         System.out.println(newLine + "Results of 5th task:");
-        IntStream stream5 = divideByWithoutRemainder(array, divider2); //task number 5
+        int[] arrayRemainder2 = divideByWithoutRemainder(array, divider2); //task number 5
         System.out.println("Elements which are divided by " + divider2 + " without remainder:");
-        stream5.forEach(System.out::println);
+        Arrays.stream(arrayRemainder2).forEach(System.out::println);
 
         System.out.println(newLine + "Results of 6th task:");
         sum = sumOfArrayElements(array); // task number 6
