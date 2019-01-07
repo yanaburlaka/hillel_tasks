@@ -1,8 +1,8 @@
-package ua.hillel.burlaka.lesson4.task2;
+package ua.hillel.burlaka.lesson4.task3;
 
 import java.util.Scanner;
 
-public class Task2 {
+public class Task3 {
 
     public static void main(String[] args) {
         Scanner reader = new Scanner(System.in);
