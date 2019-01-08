@@ -1,6 +1,6 @@
 package ua.hillel.burlaka.lesson5;
 
-public class Complex {
+public class Complex implements Comparable<Complex>{
 
     private float realNumber1;
     private float realNumber2;
@@ -51,5 +51,23 @@ public class Complex {
         int pow = (int)Math. pow(complex.realNumber1, 2) + (int)Math. pow(complex.realNumber2, 2);
         return new Complex(((realNumber1 * complex.realNumber1 + realNumber2 * complex.realNumber2) / pow),
                 ((realNumber2 * complex.realNumber1 - realNumber1 * complex.realNumber2) / pow));
+    }
+
+    //вроде нельзя сравнивать комплексные числа, но пускай они будут сравниваться так:
+
+    @Override
+    public int compareTo(Complex o) {
+        if (this.realNumber1 < o.realNumber1 && this.realNumber2 < o.realNumber2) {
+            return -1;
+        }
+        else if (this.realNumber1 == o.realNumber1 && this.realNumber2 == o.realNumber2) {
+            return 0;
+        }
+        else if (this.realNumber1 < o.realNumber1 && this.realNumber2 >= o.realNumber2) {
+            return -1;
+        }
+        else {
+            return 1;
+        }
     }
 }

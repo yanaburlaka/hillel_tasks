@@ -17,14 +17,26 @@ public class Task {
 
 
         Complex complex2 = new Complex(3, 4);
-        System.out.println(complex.plus(complex2));
-        System.out.println(complex.minus(complex2));
-        System.out.println(complex.compose(complex2));
+        System.out.println(complex.toString() + " + " + complex2.toString() +
+                " = " + complex.plus(complex2));
+        System.out.println(complex.toString() + " - " + complex2.toString() +
+                " = " + complex.minus(complex2));
+        System.out.println(complex.toString() + " * " + complex2.toString() +
+                " = " + complex.compose(complex2));
         if (complex2.getRealNumber1() == 0 && complex2.getRealNumber2() == 0) {
-            System.out.println("We can't do it");
+            System.out.println(complex.toString() + " / " + complex2.toString() +
+                    " = " + "We can't do it");
+        } else {
+            System.out.println(complex.toString() + " / " + complex2.toString() +
+                    " = " + complex.divide(complex2));
         }
-        else {
-            System.out.println(complex.divide(complex2));
+        int result = complex.compareTo(complex2);
+        if (result == 1) {
+            System.out.println(complex.toString() + " > " + complex2.toString());
+        } else if (result == -1) {
+            System.out.println(complex.toString() + " < " + complex2.toString());
+        } else {
+            System.out.println(complex.toString() + " = " + complex2.toString());
         }
 
     }
