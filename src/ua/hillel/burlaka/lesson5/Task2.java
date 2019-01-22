@@ -16,8 +16,37 @@ public class Task2 {
         fillIn(arrayComplex2);
         sortElements(arrayComplex2);
         Arrays.stream(arrayComplex2).forEach(System.out::println);
+        System.out.println("*** MERGED ***");
+        Complex[] arrayComplexResult = mergeSortedArrays(arrayComplex1, arrayComplex2);
+        Arrays.stream(arrayComplexResult).forEach(System.out::println);
 
     }
+
+    private static Complex[] mergeSortedArrays(Complex[] arrayComplex1, Complex[] arrayComplex2) {
+        Complex[] arrayResult = new Complex[arrayComplex1.length + arrayComplex2.length];
+        int arrayIndex1 = 0;
+        int arrayIndex2 = 0;
+        int i = 0;
+        while (i < arrayResult.length) {
+            if (arrayComplex1[arrayIndex1].compareTo(arrayComplex2[arrayIndex2]) == -1) {
+                arrayResult[i] = arrayComplex1[arrayIndex1++];
+            }
+            else {
+                arrayResult[i] = arrayComplex2[arrayIndex2++];
+            }
+            if (arrayIndex1 == arrayComplex1.length) {
+                System.arraycopy(arrayComplex2, arrayIndex2, arrayResult, ++i, arrayComplex2.length - arrayIndex2);
+                break;
+            }
+            if (arrayIndex2 == arrayComplex2.length) {
+                System.arraycopy(arrayComplex1, arrayIndex1, arrayResult, ++i, arrayComplex1.length - arrayIndex1);
+                break;
+            }
+            i++;
+        }
+        return arrayResult;
+    }
+
 
     private static void fillIn(Complex[] arrayComplex1) {
         float leftLimit = -100F;
